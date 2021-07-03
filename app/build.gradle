@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-parcelize'
-    id 'org.jetbrains.kotlin.kapt'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -15,8 +15,9 @@ android {
         targetSdk 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "baseUrl", '"https://api.TheDogAPI.com/"')
+        buildConfigField("String", "apiKey", apiKey)
     }
 
     buildTypes {
@@ -27,8 +28,6 @@ android {
 
         debug {
             initWith debug
-            buildConfigField("String", "baseUrl", '"https://api.TheDogAPI.com/"')
-            buildConfigField("String", "apiKey", (project.property("apiKey") as String).toString())
         }
     }
 
@@ -50,7 +49,7 @@ dependencies {
 
     //networking
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.6.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
 
     //Dependency Injection
