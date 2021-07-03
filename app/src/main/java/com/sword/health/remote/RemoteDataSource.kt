@@ -35,5 +35,4 @@ interface RemoteDataSource {
         @Query(value = "format", encoded = true) format: String = "json",
         @Query(value = "breed_id", encoded = true) breedId: String,
     ): Response<ArrayList<Image>>
-
 }
