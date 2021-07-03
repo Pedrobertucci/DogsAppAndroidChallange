@@ -1,0 +1,27 @@
+[
+  {
+    "breeds": [
+      {
+        "bred_for": "Cattle droving",
+        "breed_group": "Herding",
+        "height": {
+          "imperial": "10.5 - 12.5",
+          "metric": "27 - 32"
+        },
+        "id": 68,
+        "life_span": "12 - 14 years",
+        "name": "Cardigan Welsh Corgi",
+        "reference_image_id": "SyXN-e9NX",
+        "temperament": "Affectionate, Devoted, Alert, Companionable, Intelligent, Active",
+        "weight": {
+          "imperial": "25 - 38",
+          "metric": "11 - 17"
+        }
+      }
+    ],
+    "height": 600,
+    "id": "SyXN-e9NX",
+    "url": "https://cdn2.thedogapi.com/images/SyXN-e9NX_150x150.jpg",
+    "width": 800
+  }
+]

@@ -1,7 +1,6 @@
 package com.sword.health.di
 
 import com.sword.health.BuildConfig
-import com.sword.health.remote.RemoteContract
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
@@ -10,6 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
+import com.sword.health.remote.RemoteDataSource
 
 @Module
 object NetworkModule {
@@ -33,12 +33,12 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideRemoteDataSource(): RemoteContract {
+    fun provideRemoteDataSource(): RemoteDataSource {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .client(provideOkHttpClient())
             .baseUrl(BuildConfig.baseUrl)
             .build()
-            .create(RemoteContract::class.java)
+            .create(RemoteDataSource::class.java)
     }
 }

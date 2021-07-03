@@ -4,22 +4,36 @@ import com.sword.health.BuildConfig
 import com.sword.health.models.Breed
 import com.sword.health.models.Image
 import retrofit2.Response
-import javax.inject.Inject
+import retrofit2.http.GET
+import retrofit2.http.Header
+import retrofit2.http.Headers
+import retrofit2.http.Query
+import java.util.*
 
-class RemoteDataSource @Inject constructor(private val request: RemoteContract) {
+interface RemoteDataSource {
 
-    suspend fun getBreeds(page: Int, limit: Int): Response<ArrayList<Breed>> {
-        return request.getBreeds(page = page,
-                                 limit = limit)
-    }
+    @Headers("Content-Type: application/json")
+    @GET("/v1/breeds")
+    suspend fun getBreeds(
+        @Header("x-api-key") apiKey: String = BuildConfig.apiKey,
+        @Query(value = "page", encoded = true) page: Int,
+        @Query(value = "limit", encoded = true) limit: Int = 20,
+    ): Response<ArrayList<Breed>>
 
-    suspend fun getBreedsByName(query: String): Response<ArrayList<Breed>> {
-        return request.getBreedsByName(query = query)
-    }
+    @Headers("Content-Type: application/json")
+    @GET("/v1/breeds/search")
+    suspend fun getBreedsByName(
+        @Header("x-api-key") apiKey: String = BuildConfig.apiKey,
+        @Query(value = "q", encoded = true) query: String
+    ): Response<ArrayList<Breed>>
 
-    suspend fun getBreedPhoto(breadId: String): Response<ArrayList<Image>> {
-          return request.getBreedPhoto(size = "small",
-                                       format = "json",
-                                       breedId = breadId)
-    }
+    @Headers("Content-Type: application/json")
+    @GET("/v1/breeds/search")
+    suspend fun getBreedPhoto(
+        @Header("x-api-key") apiKey: String = BuildConfig.apiKey,
+        @Query(value = "size", encoded = true) size: String = "small",
+        @Query(value = "format", encoded = true) format: String = "json",
+        @Query(value = "breed_id", encoded = true) breedId: String,
+    ): Response<ArrayList<Image>>
+
 }

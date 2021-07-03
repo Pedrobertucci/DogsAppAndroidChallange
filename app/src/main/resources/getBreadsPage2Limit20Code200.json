@@ -1,0 +1,461 @@
+[
+  {
+    "bred_for": "Sheep herder",
+    "breed_group": "Herding",
+    "height": {
+      "imperial": "18 - 22",
+      "metric": "46 - 56"
+    },
+    "id": 50,
+    "image": {
+      "height": 1080,
+      "id": "sGQvQUpsp",
+      "url": "https://cdn2.thedogapi.com/images/sGQvQUpsp.jpg",
+      "width": 1080
+    },
+    "life_span": "12 - 16 years",
+    "name": "Border Collie",
+    "reference_image_id": "sGQvQUpsp",
+    "temperament": "Tenacious, Keen, Energetic, Responsive, Alert, Intelligent",
+    "weight": {
+      "imperial": "30 - 45",
+      "metric": "14 - 20"
+    }
+  },
+  {
+    "bred_for": "Fox bolting, ratting",
+    "breed_group": "Terrier",
+    "height": {
+      "imperial": "11 - 16",
+      "metric": "28 - 41"
+    },
+    "id": 51,
+    "image": {
+      "height": 450,
+      "id": "HJOpge9Em",
+      "url": "https://cdn2.thedogapi.com/images/HJOpge9Em.jpg",
+      "width": 674
+    },
+    "life_span": "12 - 14 years",
+    "name": "Border Terrier",
+    "reference_image_id": "HJOpge9Em",
+    "temperament": "Fearless, Affectionate, Alert, Obedient, Intelligent, Even Tempered",
+    "weight": {
+      "imperial": "11.5 - 15.5",
+      "metric": "5 - 7"
+    }
+  },
+  {
+    "bred_for": "Ratting, Companionship",
+    "breed_group": "Non-Sporting",
+    "height": {
+      "imperial": "16 - 17",
+      "metric": "41 - 43"
+    },
+    "id": 53,
+    "image": {
+      "height": 673,
+      "id": "rkZRggqVX",
+      "url": "https://cdn2.thedogapi.com/images/rkZRggqVX.jpg",
+      "width": 1010
+    },
+    "life_span": "11 - 13 years",
+    "name": "Boston Terrier",
+    "reference_image_id": "rkZRggqVX",
+    "temperament": "Friendly, Lively, Intelligent",
+    "weight": {
+      "imperial": "10 - 25",
+      "metric": "5 - 11"
+    }
+  },
+  {
+    "bred_for": "Cattle herding",
+    "breed_group": "Herding",
+    "height": {
+      "imperial": "23.5 - 27.5",
+      "metric": "60 - 70"
+    },
+    "id": 54,
+    "image": {
+      "height": 454,
+      "id": "Byd0xl5VX",
+      "url": "https://cdn2.thedogapi.com/images/Byd0xl5VX.jpg",
+      "width": 680
+    },
+    "life_span": "10 - 15 years",
+    "name": "Bouvier des Flandres",
+    "reference_image_id": "Byd0xl5VX",
+    "temperament": "Protective, Loyal, Gentle, Intelligent, Familial, Rational",
+    "weight": {
+      "imperial": "70 - 110",
+      "metric": "32 - 50"
+    }
+  },
+  {
+    "bred_for": "Bull-baiting, guardian",
+    "breed_group": "Working",
+    "height": {
+      "imperial": "21.5 - 25",
+      "metric": "55 - 64"
+    },
+    "id": 55,
+    "image": {
+      "height": 430,
+      "id": "ry1kWe5VQ",
+      "url": "https://cdn2.thedogapi.com/images/ry1kWe5VQ.jpg",
+      "width": 645
+    },
+    "life_span": "8 - 10 years",
+    "name": "Boxer",
+    "reference_image_id": "ry1kWe5VQ",
+    "temperament": "Devoted, Fearless, Friendly, Cheerful, Energetic, Loyal, Playful, Confident, Intelligent, Bright, Brave, Calm",
+    "weight": {
+      "imperial": "50 - 70",
+      "metric": "23 - 32"
+    }
+  },
+  {
+    "bred_for": "Turkey retrieving",
+    "breed_group": "Sporting",
+    "height": {
+      "imperial": "14 - 18",
+      "metric": "36 - 46"
+    },
+    "id": 56,
+    "image": {
+      "height": 634,
+      "id": "ryHJZlcNX",
+      "url": "https://cdn2.thedogapi.com/images/ryHJZlcNX.jpg",
+      "width": 577
+    },
+    "life_span": "10 - 14 years",
+    "name": "Boykin Spaniel",
+    "reference_image_id": "ryHJZlcNX",
+    "temperament": "Friendly, Energetic, Companionable, Intelligent, Eager, Trainable",
+    "weight": {
+      "imperial": "25 - 40",
+      "metric": "11 - 18"
+    }
+  },
+  {
+    "bred_for": "Versatile gun dog",
+    "breed_group": "Sporting",
+    "height": {
+      "imperial": "21.5 - 26.5",
+      "metric": "55 - 67"
+    },
+    "id": 57,
+    "image": {
+      "height": 505,
+      "id": "S13yZg5VQ",
+      "url": "https://cdn2.thedogapi.com/images/S13yZg5VQ.jpg",
+      "width": 750
+    },
+    "life_span": "10 - 12 years",
+    "name": "Bracco Italiano",
+    "reference_image_id": "S13yZg5VQ",
+    "temperament": "Stubborn, Affectionate, Loyal, Playful, Companionable, Trainable",
+    "weight": {
+      "imperial": "55 - 88",
+      "metric": "25 - 40"
+    }
+  },
+  {
+    "bred_for": "Herding, guarding sheep",
+    "breed_group": "Herding",
+    "height": {
+      "imperial": "22 - 27",
+      "metric": "56 - 69"
+    },
+    "id": 58,
+    "image": {
+      "height": 576,
+      "id": "rkVlblcEQ",
+      "url": "https://cdn2.thedogapi.com/images/rkVlblcEQ.jpg",
+      "width": 768
+    },
+    "life_span": "10 - 12 years",
+    "name": "Briard",
+    "reference_image_id": "rkVlblcEQ",
+    "temperament": "Fearless, Loyal, Obedient, Intelligent, Faithful, Protective",
+    "weight": {
+      "imperial": "70 - 90",
+      "metric": "32 - 41"
+    }
+  },
+  {
+    "bred_for": "Pointing, retrieving",
+    "breed_group": "Sporting",
+    "height": {
+      "imperial": "17.5 - 20.5",
+      "metric": "44 - 52"
+    },
+    "id": 59,
+    "image": {
+      "height": 600,
+      "id": "HJWZZxc4X",
+      "url": "https://cdn2.thedogapi.com/images/HJWZZxc4X.jpg",
+      "width": 900
+    },
+    "life_span": "12 - 14 years",
+    "name": "Brittany",
+    "reference_image_id": "HJWZZxc4X",
+    "temperament": "Agile, Adaptable, Quick, Intelligent, Attentive, Happy",
+    "weight": {
+      "imperial": "30 - 45",
+      "metric": "14 - 20"
+    }
+  },
+  {
+    "bred_for": "Bull baiting, Fighting",
+    "breed_group": "Terrier",
+    "height": {
+      "imperial": "21 - 22",
+      "metric": "53 - 56"
+    },
+    "id": 61,
+    "image": {
+      "height": 1080,
+      "id": "VSraIEQGd",
+      "url": "https://cdn2.thedogapi.com/images/VSraIEQGd.jpg",
+      "width": 1080
+    },
+    "life_span": "10 - 12 years",
+    "name": "Bull Terrier",
+    "reference_image_id": "VSraIEQGd",
+    "temperament": "Trainable, Protective, Sweet-Tempered, Keen, Active",
+    "weight": {
+      "imperial": "50 - 70",
+      "metric": "23 - 32"
+    }
+  },
+  {
+    "bred_for": "An elegant man's fashion statement",
+    "height": {
+      "imperial": "10 - 14",
+      "metric": "25 - 36"
+    },
+    "id": 62,
+    "image": {
+      "height": 450,
+      "id": "BkKZWlcVX",
+      "url": "https://cdn2.thedogapi.com/images/BkKZWlcVX.jpg",
+      "width": 674
+    },
+    "life_span": "11 – 14 years",
+    "name": "Bull Terrier (Miniature)",
+    "reference_image_id": "BkKZWlcVX",
+    "temperament": "Trainable, Protective, Sweet-Tempered, Keen, Active, Territorial",
+    "weight": {
+      "imperial": "25 - 33",
+      "metric": "11 - 15"
+    }
+  },
+  {
+    "bred_for": "Estate guardian",
+    "breed_group": "Working",
+    "height": {
+      "imperial": "24 - 27",
+      "metric": "61 - 69"
+    },
+    "id": 64,
+    "image": {
+      "height": 638,
+      "id": "r1ifZl5E7",
+      "url": "https://cdn2.thedogapi.com/images/r1ifZl5E7.jpg",
+      "width": 850
+    },
+    "life_span": "8 - 12 years",
+    "name": "Bullmastiff",
+    "reference_image_id": "r1ifZl5E7",
+    "temperament": "Docile, Reliable, Devoted, Alert, Loyal, Reserved, Loving, Protective, Powerful, Calm, Courageous",
+    "weight": {
+      "imperial": "100 - 130",
+      "metric": "45 - 59"
+    }
+  },
+  {
+    "bred_for": "Bolting of otter, foxes, other vermin",
+    "breed_group": "Terrier",
+    "height": {
+      "imperial": "9 - 10",
+      "metric": "23 - 25"
+    },
+    "id": 65,
+    "image": {
+      "height": 836,
+      "id": "Sk7Qbg9E7",
+      "url": "https://cdn2.thedogapi.com/images/Sk7Qbg9E7.jpg",
+      "width": 1254
+    },
+    "life_span": "14 - 15 years",
+    "name": "Cairn Terrier",
+    "reference_image_id": "Sk7Qbg9E7",
+    "temperament": "Hardy, Fearless, Assertive, Gay, Intelligent, Active",
+    "weight": {
+      "imperial": "13 - 14",
+      "metric": "6 - 6"
+    }
+  },
+  {
+    "bred_for": "Companion, guard dog, and hunter",
+    "breed_group": "Working",
+    "height": {
+      "imperial": "23.5 - 27.5",
+      "metric": "60 - 70"
+    },
+    "id": 67,
+    "image": {
+      "height": 380,
+      "id": "r15m-lc4m",
+      "url": "https://cdn2.thedogapi.com/images/r15m-lc4m.jpg",
+      "width": 645
+    },
+    "life_span": "10 - 11 years",
+    "name": "Cane Corso",
+    "reference_image_id": "r15m-lc4m",
+    "temperament": "Trainable, Reserved, Stable, Quiet, Even Tempered, Calm",
+    "weight": {
+      "imperial": "88 - 120",
+      "metric": "40 - 54"
+    }
+  },
+  {
+    "bred_for": "Cattle droving",
+    "breed_group": "Herding",
+    "height": {
+      "imperial": "10.5 - 12.5",
+      "metric": "27 - 32"
+    },
+    "id": 68,
+    "image": {
+      "height": 600,
+      "id": "SyXN-e9NX",
+      "url": "https://cdn2.thedogapi.com/images/SyXN-e9NX.jpg",
+      "width": 800
+    },
+    "life_span": "12 - 14 years",
+    "name": "Cardigan Welsh Corgi",
+    "reference_image_id": "SyXN-e9NX",
+    "temperament": "Affectionate, Devoted, Alert, Companionable, Intelligent, Active",
+    "weight": {
+      "imperial": "25 - 38",
+      "metric": "11 - 17"
+    }
+  },
+  {
+    "bred_for": "Driving livestock",
+    "breed_group": "Herding",
+    "height": {
+      "imperial": "20 - 26",
+      "metric": "51 - 66"
+    },
+    "id": 69,
+    "image": {
+      "height": 650,
+      "id": "BJcNbec4X",
+      "url": "https://cdn2.thedogapi.com/images/BJcNbec4X.jpg",
+      "width": 650
+    },
+    "life_span": "10 - 12 years",
+    "name": "Catahoula Leopard Dog",
+    "reference_image_id": "BJcNbec4X",
+    "temperament": "Energetic, Inquisitive, Independent, Gentle, Intelligent, Loving",
+    "weight": {
+      "imperial": "50 - 95",
+      "metric": "23 - 43"
+    }
+  },
+  {
+    "bred_for": "Guard dogs, defending sheep from predators, mainly wolves, jackals and bears",
+    "breed_group": "Working",
+    "height": {
+      "imperial": "24 - 33.5",
+      "metric": "61 - 85"
+    },
+    "id": 70,
+    "image": {
+      "height": 682,
+      "id": "r1rrWe5Em",
+      "url": "https://cdn2.thedogapi.com/images/r1rrWe5Em.jpg",
+      "width": 1024
+    },
+    "life_span": "10 - 12 years",
+    "name": "Caucasian Shepherd (Ovcharka)",
+    "reference_image_id": "r1rrWe5Em",
+    "temperament": "Alert, Quick, Dominant, Powerful, Calm, Strong",
+    "weight": {
+      "imperial": "80 - 100",
+      "metric": "36 - 45"
+    }
+  },
+  {
+    "bred_for": "Flushing small birds, companion",
+    "breed_group": "Toy",
+    "height": {
+      "imperial": "12 - 13",
+      "metric": "30 - 33"
+    },
+    "id": 71,
+    "image": {
+      "height": 558,
+      "id": "HJRBbe94Q",
+      "url": "https://cdn2.thedogapi.com/images/HJRBbe94Q.jpg",
+      "width": 961
+    },
+    "life_span": "10 - 14 years",
+    "name": "Cavalier King Charles Spaniel",
+    "reference_image_id": "HJRBbe94Q",
+    "temperament": "Fearless, Affectionate, Sociable, Patient, Playful, Adaptable",
+    "weight": {
+      "imperial": "13 - 18",
+      "metric": "6 - 8"
+    }
+  },
+  {
+    "bred_for": "Water Retriever",
+    "breed_group": "Sporting",
+    "height": {
+      "imperial": "21 - 26",
+      "metric": "53 - 66"
+    },
+    "id": 76,
+    "image": {
+      "height": 600,
+      "id": "9BXwUeCc2",
+      "url": "https://cdn2.thedogapi.com/images/9BXwUeCc2.jpg",
+      "width": 600
+    },
+    "life_span": "10 - 13 years",
+    "name": "Chesapeake Bay Retriever",
+    "reference_image_id": "9BXwUeCc2",
+    "temperament": "Affectionate, Intelligent, Quiet, Dominant, Happy, Protective",
+    "weight": {
+      "imperial": "55 - 80",
+      "metric": "25 - 36"
+    }
+  },
+  {
+    "bred_for": "Ratting, lapdog, curio",
+    "breed_group": "Toy",
+    "height": {
+      "imperial": "11 - 13",
+      "metric": "28 - 33"
+    },
+    "id": 78,
+    "image": {
+      "height": 798,
+      "id": "B1pDZx9Nm",
+      "url": "https://cdn2.thedogapi.com/images/B1pDZx9Nm.jpg",
+      "width": 1200
+    },
+    "life_span": "10 - 14 years",
+    "name": "Chinese Crested",
+    "reference_image_id": "B1pDZx9Nm",
+    "temperament": "Affectionate, Sweet-Tempered, Lively, Alert, Playful, Happy",
+    "weight": {
+      "imperial": "10 - 13",
+      "metric": "5 - 6"
+    }
+  }
+]

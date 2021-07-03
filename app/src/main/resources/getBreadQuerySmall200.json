@@ -1,0 +1,17 @@
+[
+  {
+    "breed_group":"Sporting",
+    "height":{
+      "imperial":"19 - 22",
+      "metric":"48 - 56"
+    },
+    "id":231,
+    "life_span":"12 - 14 years",
+    "name":"Small Munsterlander Pointer",
+    "temperament":"Strong Willed, Affectionate, Intelligent, Attentive, Happy, Trainable",
+    "weight":{
+      "imperial":"35 - 60",
+      "metric":"16 - 27"
+    }
+  }
+]

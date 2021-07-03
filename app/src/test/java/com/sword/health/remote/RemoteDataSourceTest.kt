@@ -27,7 +27,7 @@ class RemoteDataSourceTest {
         .client(client)
         .addConverterFactory(GsonConverterFactory.create())
         .build()
-        .create(RemoteContract::class.java)
+        .create(RemoteDataSource::class.java)
 
     @Test
     fun `should fetch breeds with page 1 and limit 20`() {
@@ -53,8 +53,7 @@ class RemoteDataSourceTest {
             ).setResponseCode(200))
 
         runBlocking {
-            val response = request.getBreeds(page = 2,
-                                             limit = 20)
+            val response = request.getBreeds(page = 2)
 
             assertEquals(response.body()?.size, 20)
         }
@@ -94,9 +93,7 @@ class RemoteDataSourceTest {
             ).setResponseCode(200))
 
         runBlocking {
-            val response = request.getBreedPhoto(size = "med",
-                                                 format = "json",
-                                                 breedId = "68")
+            val response = request.getBreedPhoto(breedId = "68")
 
             assert(!response.body().isNullOrEmpty())
             assertEquals(response.body()?.size, 1)
