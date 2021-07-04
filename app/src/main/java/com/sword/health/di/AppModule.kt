@@ -1,6 +1,6 @@
 package com.sword.health.di
 
-import android.content.Context
+import android.app.Application
 import com.sword.health.BuildConfig
 import com.sword.health.remote.RemoteDataSource
 import com.sword.health.repositories.BreedRepository
@@ -27,28 +27,29 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideCache(context: Context) : Cache {
+    fun provideCache(context: Application) : Cache {
         val httpCacheDir = File(context.cacheDir, "responseCache")
         return Cache(httpCacheDir, (10 * 1024 * 1024).toLong() )
     }
 
     @Singleton
     @Provides
-    fun provideOkHttpClient() : OkHttpClient {
+    fun provideOkHttpClient(context: Application): OkHttpClient {
        return OkHttpClient.Builder()
             .hostnameVerifier { _, _ -> true }
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .addInterceptor(provideLogInterceptor())
+            .cache(provideCache(context))
             .build()
     }
 
     @Singleton
     @Provides
-    fun provideRemoteDataSource(): RemoteDataSource {
+    fun provideRemoteDataSource(context: Application): RemoteDataSource {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .client(provideOkHttpClient())
+            .client(provideOkHttpClient(context))
             .baseUrl(BuildConfig.baseUrl)
             .build()
             .create(RemoteDataSource::class.java)
@@ -56,7 +57,7 @@ class AppModule {
 
     @Singleton
     @Provides
-    fun provideBreedRepository(): BreedRepository {
-        return DefaultRepository(provideRemoteDataSource())
+    fun provideBreedRepository(context: Application): BreedRepository {
+        return DefaultRepository(provideRemoteDataSource(context))
     }
 }

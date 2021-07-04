@@ -6,7 +6,10 @@ import com.sword.health.di.DaggerApplicationComponent
 
 class MainApplication : Application() {
 
-    val applicationComponent: ApplicationComponent by lazy {
-        DaggerApplicationComponent.factory().create()
+    lateinit var applicationComponent: ApplicationComponent
+
+    override fun onCreate() {
+        super.onCreate()
+        applicationComponent = DaggerApplicationComponent.builder().application(this).build()
     }
 }
