@@ -3,7 +3,6 @@ package com.sword.health.repositories
 import com.sword.health.models.Breed
 import com.sword.health.models.Image
 import com.sword.health.remote.SafeRequest
-import java.lang.Exception
 import java.util.*
 
 class FakeBreedRepository : BreedRepository {
@@ -11,7 +10,7 @@ class FakeBreedRepository : BreedRepository {
     var shouldReturnNetworkError = false
     var shouldReturnEmptyValues = false
 
-    override suspend fun getBreeds(): SafeRequest<ArrayList<Breed>> {
+    override suspend fun getBreeds(page: Int): SafeRequest<ArrayList<Breed>> {
         return when {
             shouldReturnNetworkError -> {
                 SafeRequest.error("Error", null)

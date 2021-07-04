@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/breedFragment"
-        android:name="com.sword.health.view.BreedsFragment"
+        android:name="com.sword.health.view.main.BreedsFragment"
         android:label="fragment_breed"
         tools:layout="@layout/fragment_breeds" />
     <fragment
         android:id="@+id/searchBreedFragment"
-        android:name="com.sword.health.view.SearchBreedFragment"
+        android:name="com.sword.health.view.main.SearchBreedFragment"
         android:label="fragment_search_breed"
         tools:layout="@layout/fragment_search_breed" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.sword.health.view
+package com.sword.health.view.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

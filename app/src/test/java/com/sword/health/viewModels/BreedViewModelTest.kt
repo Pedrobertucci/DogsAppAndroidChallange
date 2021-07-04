@@ -31,7 +31,7 @@ class BreedViewModelTest {
     @Test
     fun `should fetch breeds and return a error`() {
         fakeBreedRepository.shouldReturnNetworkError = true
-        viewModel.getBreeds()
+        viewModel.getBreeds(1)
 
         val value = viewModel.errorLiveData.getOrAwaitValueTest()
 
@@ -43,7 +43,7 @@ class BreedViewModelTest {
         fakeBreedRepository.shouldReturnNetworkError = false
         fakeBreedRepository.shouldReturnEmptyValues = false
 
-        viewModel.getBreeds()
+        viewModel.getBreeds(1)
 
         val value = viewModel.breedsLiveData.getOrAwaitValueTest()
 
@@ -55,7 +55,7 @@ class BreedViewModelTest {
         fakeBreedRepository.shouldReturnNetworkError = false
         fakeBreedRepository.shouldReturnEmptyValues = true
 
-        viewModel.getBreeds()
+        viewModel.getBreeds(1)
 
         val value = viewModel.breedsLiveData.getOrAwaitValueTest()
 
@@ -77,7 +77,7 @@ class BreedViewModelTest {
     @Test
     fun `should fetch breeds by name and return a error`() {
         fakeBreedRepository.shouldReturnNetworkError = true
-        viewModel.getBreeds()
+        viewModel.getBreedsByName("test")
 
         val value = viewModel.errorLiveData.getOrAwaitValueTest()
 

@@ -4,25 +4,26 @@ import com.sword.health.models.Breed
 import com.sword.health.models.Image
 import com.sword.health.remote.RemoteDataSource
 import com.sword.health.remote.SafeRequest
+import retrofit2.Response
 import java.lang.Exception
 import java.util.*
 import javax.inject.Inject
 
 class DefaultRepository @Inject constructor(
     private val remoteDataSource: RemoteDataSource) : BreedRepository {
-    private var page = 1
 
-    override suspend fun getBreeds(): SafeRequest<ArrayList<Breed>> {
+    override suspend fun getBreeds(page: Int): SafeRequest<ArrayList<Breed>> {
+        val response : Response<ArrayList<Breed>>
         return try {
-            val response = remoteDataSource.getBreeds(page = page)
+            response = remoteDataSource.getBreeds(page = page)
             if (response.isSuccessful) {
                 response.body()?.let {
-                    page++
                     return@let SafeRequest.success(it)
                 } ?: SafeRequest.error("An unknown error", null)
             } else {
-                SafeRequest.error("An unknown error", null)
+                return SafeRequest.error("An unknown error", null)
             }
+
         } catch (e: Exception) {
             SafeRequest.error("Check your internet connection", null)
         }

@@ -12,26 +12,53 @@ import kotlinx.coroutines.*
 import javax.inject.Inject
 
 class BreedViewModel @Inject constructor(private val repository: BreedRepository) : ViewModel() {
+    private var emptyBreeds = false
+
     private val breedsMutableData = MutableLiveData<ArrayList<Breed>>()
     val breedsLiveData: LiveData<ArrayList<Breed>> get() = breedsMutableData
 
     private val photoMutableData = MutableLiveData<ArrayList<Image>>()
     val photoLiveData: LiveData<ArrayList<Image>> get() = photoMutableData
 
+    private val loadingMutableData = MutableLiveData<Boolean>()
+    val loadingLiveData: LiveData<Boolean> get() = loadingMutableData
+
     private val errorMutableData = MutableLiveData<String>()
     val errorLiveData: LiveData<String> get() = errorMutableData
 
-    fun getBreeds()  {
-        viewModelScope.launch {
-            val response = repository.getBreeds()
+    fun getBreeds(page: Int) {
+        if (!emptyBreeds) {
+            loadingMutableData.value = true
+            viewModelScope.launch {
+                val response = repository.getBreeds(page)
 
-            if(response.status == Status.SUCCESS) {
-                breedsMutableData.value = response.data
+                if (response.status == Status.SUCCESS) {
+                    response.data?.let {
+                       if (it.isEmpty()) {
+                           disableGetBreeds()
+                       } else {
+                           enableGetBreeds()
+                           loadingMutableData.value = false
+                           breedsMutableData.value = response.data
+                       }
+                    } ?: disableGetBreeds()
 
-            } else {
-                errorMutableData.value = response.message
+                } else {
+                    loadingMutableData.value = false
+                    errorMutableData.value = response.message
+                }
             }
+        } else {
+            loadingMutableData.value = false
         }
+    }
+
+    private fun disableGetBreeds() {
+        emptyBreeds = true
+    }
+
+    private fun enableGetBreeds() {
+        emptyBreeds = false
     }
 
     fun getBreedsByName(name: String)  {

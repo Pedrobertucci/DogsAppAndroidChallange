@@ -1,9 +1,9 @@
 package com.sword.health.di
 
 import android.app.Application
-import com.sword.health.view.BreedsFragment
-import com.sword.health.view.MainActivity
-import com.sword.health.view.SearchBreedFragment
+import com.sword.health.view.main.BreedsFragment
+import com.sword.health.view.main.MainActivity
+import com.sword.health.view.main.SearchBreedFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton

@@ -17,7 +17,7 @@ interface RemoteDataSource {
     suspend fun getBreeds(
         @Header("x-api-key") apiKey: String = BuildConfig.apiKey,
         @Query(value = "page", encoded = true) page: Int,
-        @Query(value = "limit", encoded = true) limit: Int = 20,
+        @Query(value = "limit", encoded = true) limit: Int = 30,
     ): Response<ArrayList<Breed>>
 
     @Headers("Content-Type: application/json")

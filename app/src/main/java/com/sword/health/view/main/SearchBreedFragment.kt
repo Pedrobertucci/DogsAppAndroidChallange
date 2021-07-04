@@ -1,4 +1,4 @@
-package com.sword.health.view
+package com.sword.health.view.main
 
 import android.content.Context
 import android.os.Bundle
@@ -6,18 +6,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.sword.health.databinding.FragmentBreedsBinding
+import com.sword.health.databinding.FragmentSearchBreedBinding
+import com.sword.health.view.main.MainActivity
 import com.sword.health.viewModels.BreedViewModel
 import javax.inject.Inject
 
-class BreedsFragment : Fragment() {
-    lateinit var binding: FragmentBreedsBinding
+class SearchBreedFragment : Fragment() {
+    private lateinit var binding: FragmentSearchBreedBinding
 
     @Inject
     lateinit var viewModel: BreedViewModel
 
     override fun onAttach(context: Context) {
-        (activity as MainActivity).applicationComponent.inject(breedFragment = this)
+        (activity as MainActivity).applicationComponent.inject(searchBreedFragment = this)
         super.onAttach(context)
     }
 
@@ -25,7 +26,7 @@ class BreedsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentBreedsBinding.inflate(inflater, container, false)
+        binding = FragmentSearchBreedBinding.inflate(inflater, container, false)
         return binding.root
     }
 }

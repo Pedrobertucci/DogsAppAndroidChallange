@@ -6,7 +6,7 @@ import com.sword.health.models.Image
 
 interface BreedRepository {
 
-    suspend fun getBreeds() : SafeRequest<ArrayList<Breed>>
+    suspend fun getBreeds(page: Int): SafeRequest<ArrayList<Breed>>
 
     suspend fun getBreedsByName(name: String) : SafeRequest<ArrayList<Breed>>
 
