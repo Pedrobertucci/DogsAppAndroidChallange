@@ -20,11 +20,12 @@ class FakeRemoteDataSourceTest : RemoteDataSource {
             shouldReturnNetworkError -> {
                 val errorResponseBody = "".toResponseBody("application/json".toMediaTypeOrNull())
                 Response.error(500, errorResponseBody)
-
             }
+
             shouldReturnEmptyValues -> {
                 Response.success(ArrayList())
             }
+
             else -> {
                 val result = ArrayList<Breed>()
                 result.add(Breed())
@@ -41,11 +42,12 @@ class FakeRemoteDataSourceTest : RemoteDataSource {
             shouldReturnNetworkError -> {
                 val errorResponseBody = "".toResponseBody("application/json".toMediaTypeOrNull())
                 Response.error(500, errorResponseBody)
-
             }
+
             shouldReturnEmptyValues -> {
                 Response.success(ArrayList())
             }
+
             else -> {
                 val result = ArrayList<Breed>()
                 result.add(Breed())
@@ -64,11 +66,12 @@ class FakeRemoteDataSourceTest : RemoteDataSource {
             shouldReturnNetworkError -> {
                 val errorResponseBody = "".toResponseBody("application/json".toMediaTypeOrNull())
                 Response.error(500, errorResponseBody)
-
             }
+
             shouldReturnEmptyValues -> {
                 Response.success(ArrayList())
             }
+
             else -> {
                 val result = ArrayList<Image>()
                 result.add(Image())

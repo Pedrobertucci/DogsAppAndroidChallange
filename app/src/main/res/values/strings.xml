@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Sword Health</string>
+
+    <string name="menu_breeds">Breeds</string>
+    <string name="menu_search">Search</string>
 </resources>
