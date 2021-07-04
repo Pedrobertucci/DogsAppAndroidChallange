@@ -7,7 +7,7 @@ import okhttp3.ResponseBody.Companion.toResponseBody
 import retrofit2.Response
 import kotlin.collections.ArrayList
 
-class FakeRemoteDataSource : RemoteDataSource {
+class FakeRemoteDataSourceTest : RemoteDataSource {
     var shouldReturnNetworkError = false
     var shouldReturnEmptyValues = false
 

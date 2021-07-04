@@ -8,7 +8,6 @@ import com.sword.health.models.Breed
 import com.sword.health.models.Image
 import com.sword.health.remote.Status
 import com.sword.health.repositories.BreedRepository
-import com.sword.health.utils.Event
 import kotlinx.coroutines.*
 import javax.inject.Inject
 
