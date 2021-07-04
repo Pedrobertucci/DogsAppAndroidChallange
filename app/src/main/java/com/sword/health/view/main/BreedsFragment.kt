@@ -26,9 +26,12 @@ class BreedsFragment : Fragment() {
     private lateinit var adapter: BreedsAdapter
     private lateinit var gridLayoutManager : GridLayoutManager
     private var breedsList = ArrayList<Breed>()
-    private var firstVisibleInList = 0
     private var page = 1
     private lateinit var toast: Toast
+    private var disableGetBreeds = false
+    private var pastVisibleItems = 0
+    private var visibleItemCount = 0
+    private var totalItemCount = 0
 
     @Inject
     lateinit var viewModel: BreedViewModel
@@ -63,20 +66,12 @@ class BreedsFragment : Fragment() {
     private val onScrollListener = object : RecyclerView.OnScrollListener() {
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
+            visibleItemCount = gridLayoutManager.childCount
+            totalItemCount = gridLayoutManager.itemCount
+            pastVisibleItems = gridLayoutManager.findFirstVisibleItemPosition()
 
-            Log.d("scroll", "onScrolled: " + gridLayoutManager.findFirstVisibleItemPosition() + " >>> " + breedsList.size * 0.60 + " scroll Down -> " + (dy > 0).toString())
-//            if(dy > 0 && gridLayoutManager.findFirstVisibleItemPosition() > (breedsList.size * 0.60)) {
-//               getBreeds()
-//            }
-        }
-
-        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-            super.onScrollStateChanged(recyclerView, newState)
-
-            if (newState == RecyclerView.SCROLL_STATE_SETTLING) {
-                if(gridLayoutManager.findFirstVisibleItemPosition() > (breedsList.size * 0.60)) {
-                    getBreeds()
-                }
+            if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
+                getBreeds()
             }
         }
     }
@@ -93,17 +88,20 @@ class BreedsFragment : Fragment() {
     private fun setupObservers() {
         viewModel.breedsLiveData.observe(requireActivity() as MainActivity, {
             it?.let {
-                page++
-                breedsList.addAll(it)
-                adapter.notifyDataSetChanged()
+                Log.d("TESTE", "setupObservers: ${it.size}")
+                if (it.isNotEmpty()) {
+                    page++
+                    breedsList.addAll(it)
+                    adapter.notifyDataSetChanged()
+                } else {
+                    disableGetBreeds = true
+                }
             }
         })
 
         viewModel.errorLiveData.observe(requireActivity() as MainActivity, {
             it?.let {
-                if (::toast.isInitialized) toast.cancel()
-                toast = Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT)
-                toast.show()
+                showToast(it)
             }
         })
 
@@ -114,8 +112,15 @@ class BreedsFragment : Fragment() {
         })
     }
 
+    private fun showToast(message: String) {
+        if (::toast.isInitialized) toast.cancel()
+        toast = Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT)
+        toast.show()
+    }
+
     private fun getBreeds() {
-        viewModel.getBreeds(page = page)
+        if (!disableGetBreeds)
+            viewModel.getBreeds(page = page)
     }
 
     override fun onPause() {

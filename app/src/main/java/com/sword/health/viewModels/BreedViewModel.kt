@@ -1,5 +1,6 @@
 package com.sword.health.viewModels
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,12 +9,12 @@ import com.sword.health.models.Breed
 import com.sword.health.models.Image
 import com.sword.health.remote.Status
 import com.sword.health.repositories.BreedRepository
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class BreedViewModel @Inject constructor(private val repository: BreedRepository) : ViewModel() {
-    private var emptyBreeds = false
-
     private val breedsMutableData = MutableLiveData<ArrayList<Breed>>()
     val breedsLiveData: LiveData<ArrayList<Breed>> get() = breedsMutableData
 
@@ -27,38 +28,25 @@ class BreedViewModel @Inject constructor(private val repository: BreedRepository
     val errorLiveData: LiveData<String> get() = errorMutableData
 
     fun getBreeds(page: Int) {
-        if (!emptyBreeds) {
-            loadingMutableData.value = true
+        Log.d("viewModel", "getBreeds called")
+            enableLoading()
             viewModelScope.launch {
                 val response = repository.getBreeds(page)
+                disableLoading()
 
-                if (response.status == Status.SUCCESS) {
-                    response.data?.let {
-                       if (it.isEmpty()) {
-                           disableGetBreeds()
-                       } else {
-                           enableGetBreeds()
-                           loadingMutableData.value = false
-                           breedsMutableData.value = response.data
-                       }
-                    } ?: disableGetBreeds()
-
-                } else {
-                    loadingMutableData.value = false
+                if (response.status == Status.SUCCESS)
+                    breedsMutableData.value = response.data
+                else
                     errorMutableData.value = response.message
-                }
             }
-        } else {
-            loadingMutableData.value = false
-        }
     }
 
-    private fun disableGetBreeds() {
-        emptyBreeds = true
+    private suspend fun disableLoading() = withContext(Dispatchers.Main) {
+        loadingMutableData.value = false
     }
 
-    private fun enableGetBreeds() {
-        emptyBreeds = false
+    private fun enableLoading()  {
+        loadingMutableData.value = true
     }
 
     fun getBreedsByName(name: String)  {
