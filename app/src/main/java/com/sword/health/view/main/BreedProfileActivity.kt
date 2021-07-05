@@ -61,9 +61,8 @@ class BreedProfileActivity : AppCompatActivity() {
     @SuppressLint("NotifyDataSetChanged")
     private fun setupObservers() {
         viewModel.photoLiveData.observe(this, {
-            it?.let {
-                imageList.addAll(it)
-                adapter.notifyDataSetChanged()
+            it?.let { it ->
+                showDownloadImages(it)
             }
         })
 
@@ -72,6 +71,15 @@ class BreedProfileActivity : AppCompatActivity() {
                 if(it) ProgressDialog.show() else ProgressDialog.hide()
             }
         })
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private fun showDownloadImages(images: ArrayList<Image>) {
+        imageList.addAll(images)
+        val listWithoutDuplicates = imageList.distinct()
+        images.clear()
+        images.addAll(listWithoutDuplicates)
+        adapter.notifyDataSetChanged()
     }
 
     private fun setupOnBack() {
