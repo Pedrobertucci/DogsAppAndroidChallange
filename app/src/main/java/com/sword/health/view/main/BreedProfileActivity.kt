@@ -34,10 +34,11 @@ class BreedProfileActivity : AppCompatActivity() {
         ProgressDialog.init(this)
 
         intent.getParcelableExtra<Breed>(Constant.argsBreed)?.let {
-            setupAdapter()
             setupObservers()
             setupData(it)
+            setupAdapter()
             setupOnBack()
+            viewModel.getBreedPhoto(breedId = it.id.toString())
         } ?: finish()
     }
 
@@ -48,9 +49,9 @@ class BreedProfileActivity : AppCompatActivity() {
         binding.recyclerView.adapter = adapter
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun setupData(breed: Breed) {
-        viewModel.getBreedPhoto(breedId = breed.id.toString())
-
+        imageList.add(breed.image)
         binding.txtTitle.text = breed.name
         binding.txtGroupValue.text = breed.breedGroup
         binding.txtOriginValue.text = breed.origin

@@ -22,6 +22,7 @@ import com.sword.health.view.adapter.SearchAdapter
 import com.sword.health.view.main.MainActivity
 import com.sword.health.view.utils.OnClickBreedCallback
 import com.sword.health.view.utils.ProgressDialog
+import com.sword.health.view.utils.Utils
 import com.sword.health.view.utils.Utils.hideKeyboard
 import com.sword.health.view.utils.Utils.openKeyboard
 import com.sword.health.viewModels.BreedViewModel
@@ -72,7 +73,7 @@ class SearchBreedFragment : Fragment() {
             override fun onQueryTextSubmit(query: String?): Boolean {
 
                 query?.let {
-                    if (query.length > 2) {
+                    if (query.length > 2 && Utils.hasNetwork(requireContext())) {
                         viewModel.getBreedsByName(query)
                     } else {
                         breedsList.clear()
@@ -85,7 +86,7 @@ class SearchBreedFragment : Fragment() {
             @SuppressLint("NotifyDataSetChanged")
             override fun onQueryTextChange(newText: String?): Boolean {
                 newText?.let {
-                    if (newText.length > 2) {
+                    if (newText.length > 2 && Utils.hasNetwork(requireContext())) {
                         viewModel.getBreedsByName(newText)
                     } else {
                         breedsList.clear()

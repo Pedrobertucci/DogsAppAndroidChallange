@@ -14,4 +14,7 @@
     <string name="default_empty_value">not found</string>
 
     <string name="dog_image_description">Dog Image</string>
+
+    <string name="offline_message">Oops!\nYou are offline 😰</string>
+    <string name="btn_refresh">Try again</string>
 </resources>

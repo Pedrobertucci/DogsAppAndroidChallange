@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sword.health.databinding.FragmentBreedsBinding
@@ -17,6 +18,7 @@ import com.sword.health.utils.Constant
 import com.sword.health.view.utils.OnClickBreedCallback
 import com.sword.health.view.adapter.BreedsAdapter
 import com.sword.health.view.utils.ProgressDialog
+import com.sword.health.view.utils.Utils
 import com.sword.health.viewModels.BreedViewModel
 import javax.inject.Inject
 
@@ -52,8 +54,15 @@ class BreedsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         ProgressDialog.init(requireContext())
         setupAdapter()
+        setupRefreshButton()
         setupObservers()
         getBreeds()
+    }
+
+    private fun setupRefreshButton() {
+        binding.btnRefresh.setOnClickListener {
+            getBreeds()
+        }
     }
 
     private val onClickBreedCallback = object : OnClickBreedCallback {
@@ -113,8 +122,16 @@ class BreedsFragment : Fragment() {
     }
 
     private fun getBreeds() {
-        if (!disableGetBreeds)
+        if (!disableGetBreeds && Utils.hasNetwork(requireContext())) {
+            if (binding.offlineLayout.isVisible) {
+                binding.offlineLayout.visibility = View.GONE
+            }
             viewModel.getBreeds(page = page)
+        } else {
+            if (breedsList.isEmpty() && !binding.offlineLayout.isVisible) {
+                binding.offlineLayout.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onPause() {

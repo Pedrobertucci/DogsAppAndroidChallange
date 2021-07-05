@@ -9,9 +9,7 @@ import com.sword.health.models.Breed
 import com.sword.health.models.Image
 import com.sword.health.remote.Status
 import com.sword.health.repositories.BreedRepository
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class BreedViewModel @Inject constructor(private val repository: BreedRepository) : ViewModel() {
