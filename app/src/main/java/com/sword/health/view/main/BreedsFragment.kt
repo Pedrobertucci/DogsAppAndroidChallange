@@ -3,7 +3,6 @@ package com.sword.health.view.main
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +10,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.snackbar.Snackbar
-import com.sword.health.R
 import com.sword.health.databinding.FragmentBreedsBinding
 import com.sword.health.models.Breed
 import com.sword.health.view.utils.OnClickBreedCallback
@@ -88,7 +85,6 @@ class BreedsFragment : Fragment() {
     private fun setupObservers() {
         viewModel.breedsLiveData.observe(requireActivity() as MainActivity, {
             it?.let {
-                Log.d("TESTE", "setupObservers: ${it.size}")
                 if (it.isNotEmpty()) {
                     page++
                     breedsList.addAll(it)
@@ -101,7 +97,7 @@ class BreedsFragment : Fragment() {
 
         viewModel.errorLiveData.observe(requireActivity() as MainActivity, {
             it?.let {
-                showToast(it)
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
             }
         })
 
@@ -110,12 +106,6 @@ class BreedsFragment : Fragment() {
                 if(it) ProgressDialog.show() else ProgressDialog.hide()
             }
         })
-    }
-
-    private fun showToast(message: String) {
-        if (::toast.isInitialized) toast.cancel()
-        toast = Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT)
-        toast.show()
     }
 
     private fun getBreeds() {

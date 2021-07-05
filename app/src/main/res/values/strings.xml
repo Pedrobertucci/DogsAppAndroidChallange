@@ -3,4 +3,13 @@
 
     <string name="menu_breeds">Breeds</string>
     <string name="menu_search">Search</string>
+
+    <string name="label_name">Name: </string>
+    <string name="label_group">Group: </string>
+    <string name="label_origin">Origin: </string>
+
+    <string name="search_empty">Search not found</string>
+
+    <string name="default_empty_value">not found</string>
+
 </resources>

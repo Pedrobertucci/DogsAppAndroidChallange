@@ -10,7 +10,7 @@ data class Breed(
     val bredFor: String = "",
 
     @SerializedName("breed_group")
-    val breedGroup: BreedGroup = BreedGroup.Unknown,
+    val breedGroup: String = "",
 
     @SerializedName("reference_image_id")
     val referenceImageID: String = "",

@@ -28,7 +28,6 @@ class BreedViewModel @Inject constructor(private val repository: BreedRepository
     val errorLiveData: LiveData<String> get() = errorMutableData
 
     fun getBreeds(page: Int) {
-        Log.d("viewModel", "getBreeds called")
             enableLoading()
             viewModelScope.launch {
                 val response = repository.getBreeds(page)
