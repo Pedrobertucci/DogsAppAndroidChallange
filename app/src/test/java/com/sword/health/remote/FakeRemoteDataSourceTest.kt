@@ -5,6 +5,8 @@ import com.sword.health.models.Image
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.ResponseBody.Companion.toResponseBody
 import retrofit2.Response
+import retrofit2.http.Header
+import retrofit2.http.Query
 import kotlin.collections.ArrayList
 
 class FakeRemoteDataSourceTest : RemoteDataSource {
@@ -57,11 +59,13 @@ class FakeRemoteDataSourceTest : RemoteDataSource {
     }
 
     override suspend fun getBreedPhoto(
-        apiKey: String,
-        size: String,
-        format: String,
-        breedId: String
-    ): Response<ArrayList<Image>> {
+        @Header(value = "x-api-key") apiKey: String,
+        @Query(encoded = true, value = "breed_id") breedId: String,
+        @Query(encoded = true, value = "format") format: String,
+        @Query(encoded = true, value = "limit") limit: Int,
+        @Query(encoded = true, value = "page") page: Int,
+        @Query(encoded = true, value = "size") size: String
+    ): Response<java.util.ArrayList<Image>> {
         return when {
             shouldReturnNetworkError -> {
                 val errorResponseBody = "".toResponseBody("application/json".toMediaTypeOrNull())
