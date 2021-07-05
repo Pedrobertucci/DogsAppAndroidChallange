@@ -28,11 +28,13 @@ interface RemoteDataSource {
     ): Response<ArrayList<Breed>>
 
     @Headers("Content-Type: application/json")
-    @GET("/v1/breeds/search")
+    @GET("/v1/images/search")
     suspend fun getBreedPhoto(
         @Header("x-api-key") apiKey: String = BuildConfig.apiKey,
-        @Query(value = "size", encoded = true) size: String = "small",
-        @Query(value = "format", encoded = true) format: String = "json",
         @Query(value = "breed_id", encoded = true) breedId: String,
+        @Query(value = "format", encoded = true) format: String = "json",
+        @Query(value = "limit", encoded = true) limit: Int = 5,
+        @Query(value = "page", encoded = true) page: Int = 1,
+        @Query(value = "size", encoded = true) size: String = "full",
     ): Response<ArrayList<Image>>
 }

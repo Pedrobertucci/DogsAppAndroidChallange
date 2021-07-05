@@ -2,6 +2,7 @@ package com.sword.health.view.main
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.sword.health.databinding.FragmentBreedsBinding
 import com.sword.health.models.Breed
+import com.sword.health.utils.Constant
 import com.sword.health.view.utils.OnClickBreedCallback
 import com.sword.health.view.adapter.BreedsAdapter
 import com.sword.health.view.utils.ProgressDialog
@@ -56,7 +58,9 @@ class BreedsFragment : Fragment() {
 
     private val onClickBreedCallback = object : OnClickBreedCallback {
         override fun onClick(breed: Breed) {
-            Toast.makeText(requireContext(), breed.name, Toast.LENGTH_SHORT).show()
+            val intent = Intent(requireContext(), BreedProfileActivity::class.java)
+            intent.putExtra(Constant.argsBreed, breed)
+            (requireActivity() as MainActivity).startActivity(intent)
         }
     }
 

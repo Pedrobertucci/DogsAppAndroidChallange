@@ -22,7 +22,8 @@
             android:scaleType="fitCenter"
             android:translationZ="5dp"
             android:adjustViewBounds="true"
-            tools:srcCompat="@drawable/example" />
+            tools:srcCompat="@drawable/example"
+            android:contentDescription="@string/dog_image_description"/>
 
         <TextView
             android:id="@+id/txtNameValue"
@@ -32,6 +33,7 @@
             android:fontFamily="@font/roboto_medium"
             android:maxLength="25"
             android:maxLines="1"
+            android:textIsSelectable="true"
             tools:text="@tools:sample/lorem[3]" />
     </LinearLayout>
 

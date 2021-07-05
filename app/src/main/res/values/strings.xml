@@ -7,9 +7,11 @@
     <string name="label_name">Name: </string>
     <string name="label_group">Group: </string>
     <string name="label_origin">Origin: </string>
+    <string name="label_temperament">Temperament: </string>
 
     <string name="search_empty">Search not found</string>
 
     <string name="default_empty_value">not found</string>
 
+    <string name="dog_image_description">Dog Image</string>
 </resources>

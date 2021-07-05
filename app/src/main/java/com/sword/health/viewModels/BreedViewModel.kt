@@ -40,7 +40,7 @@ class BreedViewModel @Inject constructor(private val repository: BreedRepository
             }
     }
 
-    private suspend fun disableLoading() = withContext(Dispatchers.Main) {
+    private fun disableLoading() {
         loadingMutableData.value = false
     }
 
@@ -62,8 +62,10 @@ class BreedViewModel @Inject constructor(private val repository: BreedRepository
     }
 
     fun getBreedPhoto(breedId: String)  {
+        enableLoading()
         viewModelScope.launch {
             val response = repository.getBreedPhoto(breedId = breedId)
+            disableLoading()
 
             if(response.status == Status.SUCCESS) {
                 photoMutableData.value = response.data

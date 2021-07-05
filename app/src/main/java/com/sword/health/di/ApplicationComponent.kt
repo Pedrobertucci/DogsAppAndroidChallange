@@ -1,6 +1,7 @@
 package com.sword.health.di
 
 import android.app.Application
+import com.sword.health.view.main.BreedProfileActivity
 import com.sword.health.view.main.BreedsFragment
 import com.sword.health.view.main.MainActivity
 import com.sword.health.view.main.SearchBreedFragment
@@ -21,6 +22,7 @@ interface ApplicationComponent {
     }
 
     fun inject(mainActivity: MainActivity)
+    fun inject(breedProfileActivity: BreedProfileActivity)
     fun inject(breedFragment: BreedsFragment)
     fun inject(searchBreedFragment: SearchBreedFragment)
 }
